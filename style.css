@@ -1,0 +1,218 @@
+/* === Global Styles === */
+body {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    margin: 0; /* Remove default margin */
+    color: #333; 
+}
+
+/* === Container Styles === */
+.array-container {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+/* === Array Display Styles === */
+.array {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* === Array Cell Styles === */
+.array-cell {
+    width: 50px;
+    height: 50px;
+    line-height: 3rem;
+    text-align: center;
+    border: 1px solid black;
+    background-color: #d3d3d3;
+    margin: 0 2px;
+    font-weight: bold;
+}
+
+/* === Array Indices Styles === */
+.array-indices {
+    display: flex;
+    justify-content: center;
+}
+
+.array-index {
+    width: 50px;
+    text-align: center;
+    margin: 0 2px;
+    font-size: 14px;
+    color: gray;
+}
+
+/* === Table Styles === */
+table {
+    width: 50rem;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 0.7rem;
+    text-align: center;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+/* === Code Styling === */
+code {
+    font-size: 15px;
+    background-color: #f5f5f5;
+    padding: 0.1rem;
+}
+
+/* === Flexbox Layouts === */
+.array-indices, .memory {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+/* === Array Index & Memory Cell Styling === */
+.array-index, .memory-cell {
+    width: 50px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-size: 0.9em;
+    color: gray;
+}
+
+/* === Memory Block Container Styles === */
+.memory {
+    display: flex; 
+    justify-content: center;
+    margin-top: 10px; 
+    padding: 0.5rem; 
+    background-color: #f9f9f9; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+}
+
+/* === Memory Cell Styles === */
+.memory-cell {
+    width: 5rem; 
+    height: 2rem; 
+    line-height: 30px; 
+    text-align: center; 
+    border: 1px solid black; 
+    background-color: #e0e0e0; 
+    margin: 2px; 
+    font-size: 0.8em; 
+    font-weight: bold; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    box-sizing: border-box; 
+}
+
+/* === Modal Styles === */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* Center the modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; 
+    line-height: 1.5;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* === List Style === */
+li {
+    list-style: none;
+}
+
+/* === Highlight Styles === */
+.highlight {
+    background-color: yellow;
+}
+
+.highlight-memory {
+    background-color: purple;
+}
+
+/* === Pointer and Last Memory Highlight Styles === */
+.ptr-memory {
+    background-color: rgb(92, 224, 15);
+    color: black;
+}
+
+.last-memory {
+    background-color: rgb(71, 15, 224);
+    color: silver;
+}
+
+/* === Button Styles === */
+button {
+    background-color: #4c6baf; 
+    color: white;             
+    border: none; 
+    padding: 10px 20px;       
+    text-align: center;        
+    text-decoration: none; 
+    display: inline-block;     
+    font-size: 16px;          
+    cursor: pointer;          
+    border-radius: 5px;        
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+/* === Button Hover and Active Effects === */
+button:hover {
+    background-color: #4e80ec; 
+    transform: scale(1.05);     /* Slightly enlarge the button */
+}
+
+button:active {
+    background-color: #3e8e414c;
+    transform: scale(0.98);     /* Slightly shrink the button */
+}
+
+/* === Button Modifier Classes === */
+button.increment {
+    background-color: #3e8e41; 
+}
+
+button.decrement {
+    background-color: #e73e27; 
+}
