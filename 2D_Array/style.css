@@ -1,10 +1,16 @@
 /* === Global Styles === */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+  }
+
 body {
     text-align: center;
     padding: 2rem;
     background-color: #f4f4f4;
     font-family: 'Roboto', sans-serif;
-    margin: 0; /* Remove default margin */
+    margin: 0; 
     color: #333; 
 }
 
@@ -208,12 +214,12 @@ button {
 /* === Button Hover and Active Effects === */
 button:hover {
     background-color: #4e80ec; 
-    transform: scale(1.05);     /* Slightly enlarge the button */
+    transform: scale(1.05);   
 }
 
 button:active {
     background-color: #3e8e414c;
-    transform: scale(0.98);     /* Slightly shrink the button */
+    transform: scale(0.98);    
 }
 
 /* === Button Modifier Classes === */
