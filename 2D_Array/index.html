@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pointers in C - 2D Array</title>
+    <link rel="stylesheet" href="../2D_Array/style.css">
+    <script src="../2D_Array/code.js" defer></script>
+</head>
+<body>
+
+    <!-- Modal Instruction Box on Page Enter -->
+    <div id="instructionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Welcome to C Pointers in a 2D Array!</h2>
+            <p><strong>Instructions:</strong></p>
+            <ul>
+                <li>Click 'Generate Random Array' to generate a 2D array.</li>
+                <li>The position of the pointer ptr is highlighted on the array in yellow.</li>
+                <li>The position of the pointer ptr is highlighted on the memory block in purple.</li>
+                <li>You can increment or decrement the pointer position.</li>
+                <li>The table below shows different pointer operations and examples.</li>
+            </ul>
+            <p>Enjoy and C how it works :D!</p>
+        </div>
+    </div>
+
+    <!-- Array display -->
+    <div class="array-container">
+        <button onclick="generateAndDisplayRandomArray()">Generate Random Array</button>
+        <h1>The Array:</h1>
+        <div class="array" id="arrayDisplay">
+            <!-- 2D Array values will be displayed here -->
+        </div>
+        <div class="array-indices" id="indicesDisplay">
+            <!-- Array indices will be displayed here -->
+        </div>
+        <div class="memory" id="memoryDisplay">
+            <!-- Memory locations will be displayed here -->
+        </div>
+    </div>
+    <div id="arrayDisplay"></div>
+    <div id="memoryDisplay"></div>
+    
+    <!-- Extra information here -->
+    <h2>We are given:</h2>
+    <p><code>int *ptr = numbers;</code></p>
+    <div>
+        <button class="increment" onclick="decrementPtr()">Decrement</button>
+        <button class="decrement" onclick="incrementPtr()">Increment</button>
+    </div>
+    <div class="container">
+        <!-- Table -->
+        <h1>Pointer Operations</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Equivalent to</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>ptr (+ <span class="pointerCount"></span>)</code></td>
+                    <td><code><span class="pointerValue"></span></code></td>
+                </tr>
+                <tr>
+                    <td><code>*(ptr + <span class="pointerCount"></span>)</code></td>
+                    <td><code><span class="dereferencingValue"></span></code></td>
+                </tr>
+                <tr>
+                    <td><code>*(numbers+ <span class="pointerCount"></span>)</code></td>
+                    <td><code><span class="pointerValue"></span></code></td>
+                </tr>
+                <tr>
+                    <td><code>*(*numbers + <span class="pointerCount"></span>)</code></td>
+                    <td><code><span class="dereferencingValue"></span></code></td>
+                </tr>
+                <tr>
+                    <td><code>&ptr</code></td>
+                    <td><code>ptr Memory</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

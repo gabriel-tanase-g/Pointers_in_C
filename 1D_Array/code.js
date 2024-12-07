@@ -79,7 +79,6 @@ function displayMemoryAddresses()
         div.classList.add('highlight-memory');
         memoryDisplay.appendChild(div);
     });
-    
     // Add "ptr" and "last" memory labels
     displayPointerMemory(); 
 
@@ -145,10 +144,10 @@ function generateAndDisplayRandomArray()
     generateRandomArray(); // Generate random array with random values and reset pointer position
     displayArrayValues();  // Display the array values and highlight the current pointer position
     displayArrayIndices(); // Display the indices of the array elements
+    updatePointerOperations(displayMemoryAddresses()); // Update pointer operations based on the current pointer position
     updateHeading();       // Update the heading with the size of the generated array
     displayMemoryAddresses(); // Display memory addresses corresponding to each array element
     displayLastIndexAndValue(); // Display the last index and its value in the array
-    updatePointerOperations(displayMemoryAddresses()); // Update pointer operations based on the current pointer position
 }
 
 window.onload = function() 
