@@ -1,4 +1,5 @@
-let randomArray = []; // Global array variable
+// Global Variables
+let randomArray = []; // 1D array
 let pointerPosition = 0;  // Initial pointer position
 
 function generateRandomArray() 

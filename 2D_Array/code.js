@@ -1,131 +1,135 @@
 // Global Variables
 let randomArray = []; // 2D array
-let pointerPosition = 0; // Pointer as a single index for the flat array
+let pointerPosition = 0; // Initial pointer position
 
-// Generate a Random 2D Array
-function generateRandomArray() {
+function generateRandomArray() 
+{
+    // Generate a Random 2D Array
     const rows = Math.floor(Math.random() * 2) + 2; // 2-3 rows
-    const cols = Math.floor(Math.random() * 2) + 2; // 2-6 columns
+    const cols = Math.floor(Math.random() * 2) + 2; // 2-3 columns
     randomArray = Array.from({ length: rows }, () =>
         Array.from({ length: cols }, () => Math.floor(Math.random() * 100) + 1)
     );
-    pointerPosition = 0; // Initialize pointer to start
+    pointerPosition = 0; // Reset pointer to start
 }
 
-// Display the Array
-function displayArrayValues() {
+function displayArrayValues() 
+{
+    // Display the Array
     const arrayDisplay = document.getElementById("arrayDisplay");
     arrayDisplay.innerHTML = ""; // Clear previous display
 
-    randomArray.forEach((row, rowIndex) => {
+    randomArray.forEach((row, rowIndex) => 
+    {
         const rowDiv = document.createElement("div");
         rowDiv.classList.add("array-row"); // Flexbox row
 
-        row.forEach((value, colIndex) => {
+        row.forEach((value, colIndex) => 
+        {
             const cellDiv = document.createElement("div");
             cellDiv.classList.add("array-cell"); // Flexbox cell
             cellDiv.textContent = value;
-
             // Highlight the pointer position
             const flatIndex = rowIndex * randomArray[0].length + colIndex;
-            if (flatIndex === pointerPosition) {
+            if (flatIndex === pointerPosition) 
                 cellDiv.classList.add("highlight");
-            }
-
             rowDiv.appendChild(cellDiv); // Add cell to row
         });
-
         arrayDisplay.appendChild(rowDiv); // Add row to array display
     });
 }
 
-// Update Array Heading
-function updateHeading() {
+function updateHeading() 
+{
+    // Update Array Heading
     const rows = randomArray.length;
     const cols = randomArray[0].length;
     document.querySelector("h1").textContent = `The Array: numbers[${rows} x ${cols}]`;
 }
 
-// Display Memory Addresses
-function displayMemoryAddresses() {
+function displayMemoryAddresses() 
+{
+    // Display Memory Addresses Block
     const memoryDisplay = document.getElementById("memoryDisplay");
     memoryDisplay.innerHTML = ""; // Clear previous memory display
-
     const memoryArray = [];
     randomArray.forEach((row, rowIndex) =>
-        row.forEach((_, colIndex) => memoryArray.push(`Memory[${rowIndex}][${colIndex}]`))
-    );
+        row.forEach((_, colIndex) => 
+            memoryArray.push(`Memory[${rowIndex}][${colIndex}]`)));
 
-    memoryArray.forEach((memory, index) => {
+    memoryArray.forEach((memory, index) => 
+    {
         const div = document.createElement("div");
         div.classList.add("memory-cell");
         div.textContent = memory;
-
-        // Highlight memory cell corresponding to pointer position
-        if (index === pointerPosition) {
+        // Highlight memory cell from pointer position
+        if (index === pointerPosition) 
             div.classList.add("highlight-memory");
-        }
-
         memoryDisplay.appendChild(div);
     });
 }
 
-// Update Pointer Operations
-function updatePointerOperations() {
+function updatePointerOperations() 
+{
+    // Update Pointer Operations
     const row = Math.floor(pointerPosition / randomArray[0].length);
     const col = pointerPosition % randomArray[0].length;
 
-    // Update all elements with class "pointerCount"
-    document.querySelectorAll(".pointerCount").forEach(el => {
+    // Update elements that display the pointer counter
+    document.querySelectorAll(".pointerCount").forEach(el => 
+    {
         el.textContent = `${pointerPosition}`;
     });
-
-    // Update all elements with class "pointerValue"
-    document.querySelectorAll(".pointerValue").forEach(el => {
+    // Update elements that display the pointer value
+    document.querySelectorAll(".pointerValue").forEach(el => 
+    {
         el.textContent = `Memory[${row}][${col}]`;
     });
-
-    // Update all elements with class "dereferencingValue"
-    document.querySelectorAll(".dereferencingValue").forEach(el => {
+    // Update elements that display the array value items
+    document.querySelectorAll(".dereferencingValue").forEach(el => 
+    {
         el.textContent = `${randomArray[row][col]}`;
     });
 }
 
 function displayPointerMemory() 
 {
-    // Add the "ptr" and "last" memory labels to the memory display
-    const memoryDisplay = document.getElementById('memoryDisplay');
-
     // Create and display the "ptr" memory cell
+    const memoryDisplay = document.getElementById('memoryDisplay');
     const pointerMemory = document.createElement('div'); 
+
     pointerMemory.classList.add('memory-cell', 'ptr-memory'); 
     pointerMemory.textContent = `ptr Memory`; 
     memoryDisplay.appendChild(pointerMemory); 
 }
-// Increment Pointer
-function incrementPtr() {
+
+function incrementPtr() 
+{
+    // Increment Pointer by one
     const maxIndex = randomArray.length * randomArray[0].length - 1;
+
     pointerPosition = (pointerPosition + 1) % (maxIndex + 1); // Wrap to start if out of bounds
-
     updatePointerOperations();
     displayArrayValues();
     displayMemoryAddresses();
     displayPointerMemory();
 }
 
-// Decrement Pointer
-function decrementPtr() {
+function decrementPtr() 
+{
+    // Decrement Pointer by one
     const maxIndex = randomArray.length * randomArray[0].length - 1;
-    pointerPosition = (pointerPosition - 1 + (maxIndex + 1)) % (maxIndex + 1); // Wrap to end if out of bounds
 
+    pointerPosition = (pointerPosition - 1 + (maxIndex + 1)) % (maxIndex + 1); // Wrap to end if out of bounds
     updatePointerOperations();
     displayArrayValues();
     displayMemoryAddresses();
     displayPointerMemory();
 }
 
-// Generate and Display Array
-function generateAndDisplayRandomArray() {
+function generateAndDisplayRandomArray() 
+{
+    // Generate and Display Array
     generateRandomArray();
     displayArrayValues();
     updateHeading();
@@ -134,13 +138,15 @@ function generateAndDisplayRandomArray() {
     displayPointerMemory();
 }
 
-// Close Modal
-function closeModal() {
-    document.getElementById("instructionModal").style.display = "none";
-}
-
-// Initialize on Page Load
-window.onload = function () {
+window.onload = function () 
+{
+    // Initialize Modal instructions on lage load
     generateAndDisplayRandomArray();
     document.getElementById("instructionModal").style.display = "block";
 };
+
+function closeModal() 
+{
+    // Close Modal
+    document.getElementById("instructionModal").style.display = "none";
+}
