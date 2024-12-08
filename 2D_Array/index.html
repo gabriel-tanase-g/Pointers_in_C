@@ -70,12 +70,20 @@
                     <td><code><span class="dereferencingValue"></span></code></td>
                 </tr>
                 <tr>
-                    <td><code>*(numbers + <span class="pointerCount"></span>)</code></td>
+                    <td><code>*numbers + <span class="pointerCount"></span></code></td>
                     <td><code><span class="pointerValue"></span></code></td>
                 </tr>
                 <tr>
                     <td><code>*(*numbers + <span class="pointerCount"></span>)</code></td>
                     <td><code><span class="dereferencingValue"></span></code></td>
+                </tr>
+                <tr>
+                    <td><code>*(numbers + 1)</code></td>
+                    <td><code>Memory[1][0]</code></td>
+                </tr>
+                <tr>
+                    <td><code>**(numbers + 1)</code></td>
+                    <td><code><span id="first-row-memory"></span></code></td>
                 </tr>
                 <tr>
                     <td><code>&ptr</code></td>

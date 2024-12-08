@@ -90,6 +90,7 @@ function updatePointerOperations()
     {
         el.textContent = `${randomArray[row][col]}`;
     });
+    
 }
 
 function displayPointerMemory() 
@@ -103,8 +104,7 @@ function displayPointerMemory()
     memoryDisplay.appendChild(pointerMemory); 
 }
 
-function incrementPtr() 
-{
+function incrementPtr() {
     // Increment Pointer by one
     const maxIndex = randomArray.length * randomArray[0].length - 1;
 
@@ -112,11 +112,11 @@ function incrementPtr()
     updatePointerOperations();
     displayArrayValues();
     displayMemoryAddresses();
+    displayFirstElementOfSecondRow()
     displayPointerMemory();
 }
 
-function decrementPtr() 
-{
+function decrementPtr() {
     // Decrement Pointer by one
     const maxIndex = randomArray.length * randomArray[0].length - 1;
 
@@ -124,7 +124,17 @@ function decrementPtr()
     updatePointerOperations();
     displayArrayValues();
     displayMemoryAddresses();
+    displayFirstElementOfSecondRow()
     displayPointerMemory();
+}
+
+function getFirstElementOfSecondRow() {
+    return randomArray[1][0];
+}
+function displayFirstElementOfSecondRow() {
+    const firstElement = getFirstElementOfSecondRow();
+    const displayElement = document.getElementById("first-row-memory");
+    displayElement.textContent=`${firstElement}`;
 }
 
 function generateAndDisplayRandomArray() 
@@ -132,10 +142,13 @@ function generateAndDisplayRandomArray()
     // Generate and Display Array
     generateRandomArray();
     displayArrayValues();
+    displayFirstElementOfSecondRow();
     updateHeading();
     displayMemoryAddresses();
     updatePointerOperations();
+    updateFirstRowValues();
     displayPointerMemory();
+   
 }
 
 window.onload = function () 

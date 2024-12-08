@@ -2,7 +2,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Ensures the body and HTML elements stretch to full height */
+    height: 100%; 
   }
 
 body {
@@ -10,7 +10,7 @@ body {
     padding: 2rem;
     background-color: #f4f4f4;
     font-family: 'Roboto', sans-serif;
-    margin: 0; /* Remove default margin */
+    margin: 0; 
     color: #333; 
 }
 
@@ -213,12 +213,12 @@ button.decrement {
 /* === Button Hover and Active Effects === */
 button:hover {
     background-color: #4e80ec; 
-    transform: scale(1.05);     /* Slightly enlarge the button */
+    transform: scale(1.05);    
 }
 
 button:active {
     background-color: #3e8e414c;
-    transform: scale(0.98);     /* Slightly shrink the button */
+    transform: scale(0.98);    
 }
 
 
