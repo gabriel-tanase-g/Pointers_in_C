@@ -146,9 +146,7 @@ function generateAndDisplayRandomArray()
     updateHeading();
     displayMemoryAddresses();
     updatePointerOperations();
-    updateFirstRowValues();
     displayPointerMemory();
-   
 }
 
 window.onload = function () 
